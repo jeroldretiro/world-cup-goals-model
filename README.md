@@ -2,9 +2,9 @@
 
 Leakage-free feature engineering (Elo ratings, rolling form) plus calibrated machine learning models — a Random Forest for Over/Under 2.5 goals and dual XGBoost Poisson models for full scoreline prediction — trained on ~49K international soccer matches and validated with true walk-forward testing across five World Cups.
 
-Built as the "second opinion" layer for [prediction-market-analytics](https://github.com/larotalon/prediction-market-analytics): a model-only view to set against live prediction-market odds, not a bet generator.
+Built as the "second opinion" layer for [prediction-market-analytics](https://github.com/larotalon/prediction-market-analytics): a model-only view to set against live prediction-market odds.
 
-> **Note:** Educational/research project. Not betting advice.
+> **Note:** Educational/research project. Not prediction advice.
 
 ---
 

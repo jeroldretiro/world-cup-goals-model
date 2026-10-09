@@ -12,8 +12,8 @@ model/second_opinion.joblib). Elo + last-10 form come from the full history
 in data/raw/results.csv -- refresh that file for latest results:
   curl -sSL -o data/raw/results.csv https://raw.githubusercontent.com/martj42/international_results/master/results.csv
 
-WORKUP INPUT, not a bet generator: no odds are used, so this is the
-data-only view to set against the Polymarket ladder, tail, and factors.
+Model-only forecast: no market data is used, so this is a data-only view to
+compare with external forecasts and contextual factors.
 """
 
 import argparse
@@ -125,9 +125,9 @@ def main():
           f"   {away} {row['a_gf']:.1f}/{row['a_ga']:.1f}")
     print(f"  rest: {home} {row['h_rest']}d, {away} {row['a_rest']}d")
     print(f"\n  MODEL P(Over 2.5) = {p:.1%}   P(Under 2.5) = {1 - p:.1%}")
-    print(f"  fair odds: Over {1 / p:.2f} / Under {1 / (1 - p):.2f}")
-    print("\n  second opinion only -- set against Polymarket ladder, "
-          "tail + internal/external factors")
+    print(f"  implied decimal: Over {1 / p:.2f} / Under {1 / (1 - p):.2f}")
+    print("\n  model-only forecast -- compare with external "
+          "forecasts + contextual factors")
 
 
 if __name__ == "__main__":

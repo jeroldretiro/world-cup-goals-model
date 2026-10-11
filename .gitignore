@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Trained model artifacts — regenerable via --retrain, not source
+model/*.joblib
+
+# Derived feature tables — regenerable via data/build.py, not source
+data/features.csv
+data/features_decay.csv

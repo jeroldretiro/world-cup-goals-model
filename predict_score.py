@@ -10,9 +10,8 @@ model/scoreline.joblib), rebuilds both teams' current Elo/form from
 data/raw/results.csv, and prints: expected goals, top exact scores, W/D/L,
 the O/U ladder, and BTTS.
 
-Model-only view. Set it against the Polymarket board — where they disagree
-by a lot, someone is wrong, and walk-forward says it is usually (not always)
-us: trust the blend, not the model alone.
+Model-only view: a forecast from the model's features alone, intended to be
+compared with an independent external forecast.
 """
 
 import argparse
@@ -93,7 +92,7 @@ def main():
     print("  O/U ladder: " + "  ".join(
         f"O{ln} {d[f'over{ln}']:.1%}" for ln in (1.5, 2.5, 3.5, 4.5)))
     print(f"  BTTS Yes {d['btts']:.1%}")
-    print("\n  model-only view -- blend vs the Polymarket board before acting")
+    print("\n  model-only view -- compare with an independent external forecast")
 
 
 if __name__ == "__main__":

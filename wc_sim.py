@@ -10,9 +10,8 @@ With four teams left this is exact arithmetic, not Monte Carlo:
 Advance probability per knockout game = P(win reg) + 0.5 * P(reg draw)
 (extra time / pens treated as a coin flip -- same assumption the ledger uses).
 
-Set against the Polymarket / Kalshi "World Cup winner" markets: where model
-and market disagree by a lot, someone is wrong -- walk-forward says it is
-usually (not always) us. Idea borrowed from ensemble bracket sims; inputs are
+Compare with external consensus "World Cup winner" forecasts to see where
+the model and the consensus diverge. Idea borrowed from ensemble bracket sims; inputs are
 our own walk-forward-validated scoreline model, not an unvalidated ensemble.
 """
 
@@ -101,7 +100,7 @@ def main():
                   f"  (incl. pens)")
 
     # -- championship
-    print("\nP(CHAMPION)  -- set against PM/Kalshi winner markets:")
+    print("\nP(CHAMPION)  -- compare with external consensus forecasts:")
     champ = {}
     for t in teams:
         p = adv[t] * sum(adv[o] * win_final[(t, o)]

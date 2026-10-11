@@ -29,13 +29,13 @@ A model-only forecast, built to be compared with an external consensus forecast 
 ## Quickstart
 
 ```bash
-python3 predict_wc.py Spain Austria        # second-opinion Over 2.5 probability
+python3 predict_wc.py Spain Austria        # model Over 2.5 probability
 python3 predict_score.py Argentina Egypt   # full scoreline board
 python3 wc_sim.py                          # bracket math for the remaining WC field
 python3 data/validate.py                   # walk-forward validation across 5 World Cups
 ```
 
-Requires `pandas`, `numpy`, `scikit-learn`, `xgboost`, `joblib`. Refresh the source data before a live run:
+Install dependencies with `pip install -r requirements.txt`. Run the unit tests (Elo update and leakage-free rolling-form logic) with `pip install pytest && python3 -m pytest tests`. Refresh the source data before a live run:
 
 ```bash
 curl -sSL -o data/raw/results.csv \
